@@ -6,8 +6,8 @@ import time
 import json
 
 # 🔐 발급받은 네이버 API 정보 입력
-client_id = 'VOztPx90xEnabih8mswf'
-client_secret = 'iqaBLmhrFt'
+client_id = '클라이언트 id'
+client_secret = 'api key'
 
 # [CODE 1]
 def getRequestUrl(url):
