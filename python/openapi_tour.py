@@ -151,7 +151,7 @@ def main():
     columns = ["입국자국가", "국가코드", "입국연월", "입국자 수", "방문객구분"]  # 'ed_cd' 컬럼 추가
     result_df = pd.DataFrame(result, columns=columns)
 
-    csv_filename = f'./{natName_final}_{ed_final}_{nStartYear}_{dataEND_final}.csv'
+    csv_filename = f'./csv/{natName_final}_{ed_final}_{nStartYear}_{dataEND_final}.csv'
     result_df.to_csv(csv_filename, index=False, encoding='cp949')  # Excel 호환을 위해 cp949 인코딩 사용
     print(f"CSV 파일 '{csv_filename}' SAVED")
 

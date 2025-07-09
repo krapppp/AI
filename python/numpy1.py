@@ -24,4 +24,3 @@ print(ar7,type(ar7))
 
 ar8=ar1+10
 print(ar8,type(ar8))
-

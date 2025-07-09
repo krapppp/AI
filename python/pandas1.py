@@ -48,6 +48,6 @@ df3 = pd.DataFrame(data_df)
 df3.columns = ['학번', '이름', '중간고사', '기말고사']
 print(df3,type(df3))
 
-df3.to_csv('C:/Users/hgd/Python_Project/score.csv', header = 'False')
-df4 = pd.read_csv('C:/Users/hgd/Python_Project/score.csv', encoding='utf-8', index_col=0, engine='python')
+df3.to_csv('./csv/score.csv', header = 'False')
+df4 = pd.read_csv('./csv/score.csv', encoding='utf-8', index_col=0, engine='python')
 print(df4,type(df4))

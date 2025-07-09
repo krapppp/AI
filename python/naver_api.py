@@ -6,8 +6,8 @@ import time
 import json
 
 # 🔐 발급받은 네이버 API 정보 입력
-client_id = '클라이언트 id'
-client_secret = 'api key'
+client_id = '클라이언트id'
+client_secret = 'apikey'
 
 # [CODE 1]
 def getRequestUrl(url):
@@ -76,12 +76,17 @@ def main():
 
         start = jsonResponse['start'] + jsonResponse['display']
         if start > 1000:
-          break
+            break
         jsonResponse = getNaverSearch(node, srcText, start, 100)
 
     print('전체 검색 : %d 건' % total)
 
-    filename = '%s_naver_%s.json' % (srcText, node)
+    # 상대경로로 json 폴더 생성 및 파일 저장
+    save_dir = './json'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    filename = os.path.join(save_dir, '%s_naver_%s.json' % (srcText, node))
     with open(filename, 'w', encoding='utf8') as outfile:
         jsonFile = json.dumps(jsonResult, indent=4, sort_keys=True, ensure_ascii=False)
         outfile.write(jsonFile)
